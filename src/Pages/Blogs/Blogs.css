@@ -1,0 +1,57 @@
+.react-application{
+    background-color: rgb(216, 216, 236);
+    margin-top: 10px;
+    margin-bottom: 20px;
+   
+}
+.list{
+    padding: 0 40px 10px 90px; 
+    
+   
+}
+
+.react-app{
+    background-color: bisque;
+    margin-bottom: 20px;
+    
+   
+}
+
+
+h2 {
+    margin-left: 40px; 
+    font-weight: 600; 
+}
+
+h5 {
+    margin-left: 40px;
+     
+}
+
+
+
+
+.prototypical-inheritance{
+    background-color: rgb(219, 219, 152);
+}
+
+.prototypical-inheritance p{
+    padding: 0 30px 3px 50px; 
+    
+}
+
+.state{
+    background-color: rgb(181, 199, 165);
+    margin-top: 20px;
+}
+
+.Unit-Test{
+    background-color: rgb(160, 210, 243);
+    margin-top: 20px;
+}
+
+.Unit-Test p{
+    padding: 0 30px 3px 50px; 
+    
+}
+
