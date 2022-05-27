@@ -7,13 +7,19 @@ import Login from './Pages/Login/Login'
 import SignUp from './Pages/Login/SignUp';
 import './App.css';
 import Home from './Pages/Home/Home';
-import Footer from './Pages/Shared/Footer';
+import NotFound from './Pages/NotFound/NotFound';
+
 import Blogs from './Pages/Blogs/Blogs';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfiles from './Pages/Dashboard/MyProfiles';
+import Manageorders from './Pages/Dashboard/Manageorders';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import Purchase from './Pages/Purchase/Purchase';
 
 
 function App() {
@@ -25,19 +31,29 @@ function App() {
         <Route path="/about" element={<About></About>} />
         <Route path="/blog" element={<Blogs></Blogs>} />
         <Route path="dashboard" element={
-         
+          <RequireAuth>
            <Dashboard></Dashboard>  
-          
+          </RequireAuth>
         } >
               <Route index element={<MyProfiles></MyProfiles>}></Route>
               <Route path="review" element={<AddReview></AddReview>}></Route>
               {/* <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route> */}
               <Route path="order" element={<MyOrders></MyOrders>}></Route>
+              <Route path="product" element={<AddProduct></AddProduct>}></Route>
+              <Route path="manageorder" element={<Manageorders></Manageorders>}></Route>
+              <Route path="manageproduct" element={<ManageProducts></ManageProducts>}></Route>
+              <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
                
                
           </Route>
         <Route path="login" element={<Login></Login>} />
         <Route path="signup" element={<SignUp></SignUp>} />
+        <Route path='/purchase' element={
+          <RequireAuth>
+            <Purchase></Purchase>
+          </RequireAuth>
+        }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       
      
