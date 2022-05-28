@@ -4,7 +4,7 @@ const BussinessSummery = () => {
     return (
         <div className="my-28  bg-base-100 ">
             <h1 className='text-3xl font-bold'>
-      BUSSINESS SUMMARY
+      BUSINESS SUMMARY
     </h1>
     <h2 className='my-1 text-2xl'>
       Overview

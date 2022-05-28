@@ -15,9 +15,16 @@ const Purchase = () => {
         } = useForm();
     
     useEffect(()=>{
-        fetch('https://mysterious-garden-19362.herokuapp.com/user')
-        .then(res=>res.json())
-        .then(data=>setUsers(data))
+        
+
+        if (user) {
+            fetch(`https://mysterious-garden-19362.herokuapp.com/user?email=${user.email}`)
+            
+            .then(res=>res.json())
+            .then(data=>setUsers(data))
+        }
+        
+       
     },[])
 
    
@@ -72,6 +79,7 @@ const Purchase = () => {
                                 <td>{a.email}</td>
                                 <td>{a.education}</td>
                                 <td>{a.location}</td>
+                                <td>{a.linkedIn}</td>
                                 <Link to={`/update/${a._id}`} ><button>Edit</button></Link>
                                 
                                
