@@ -22,6 +22,7 @@ import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
+import UpdateUser from './Pages/UpdateUser/UpdateUser';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
+        <Route path="/update/:id" element={<UpdateUser></UpdateUser>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
