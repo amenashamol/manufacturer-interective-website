@@ -48,7 +48,7 @@ const Blogs = () => {
             <div className='list'>
                 <li>If you update it directly, calling the setState() afterward may just replace the update you made.</li> 
                 <li>When you directly update the state, it does not change this.state immediately. Instead, it creates a pending state transition, and accessing it after calling this method will only return the present value.</li> 
-                <li>creates a pending state transition, and accessing it after calling this method will only return the present value.
+                <li>creates a pending state transition,      and accessing it after calling this method will only return the present value.
                  You will lose control of the state across all components.</li>
                 
                 
