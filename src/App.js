@@ -45,7 +45,7 @@ function App() {
               <Route path="product" element={<AddProduct></AddProduct>}></Route>
               <Route path="manageorder" element={<Manageorders></Manageorders>}></Route>
               <Route path="manageproduct" element={<ManageProducts></ManageProducts>}></Route>
-              <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
+              {/* <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route> */}
                
                
           </Route>
@@ -56,7 +56,7 @@ function App() {
             <Purchase></Purchase>
           </RequireAuth>
         }></Route>
-        <Route path="/update/:id" element={<UpdateUser></UpdateUser>}></Route>
+        {/* <Route path="/update/:id" element={<UpdateUser></UpdateUser>}></Route> */}
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

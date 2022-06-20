@@ -1,60 +1,83 @@
 import React ,{useState,useEffect}from 'react';
-import { useParams } from 'react-router-dom';
+
 import { useForm } from "react-hook-form";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 
-const UpdateUser = () => {
-    const {id}=useParams()
-    const[user,setUser]=useState({})
+ const UpdateUser = ( { setIsReload, isReload,id}) => {
+      const[updateData,setUpdateData]=useState('')
+      const [user]=useAuthState(auth)
+     
+   
+    
+    
     const {
         register,
         handleSubmit,
         } = useForm();
 
-    useEffect(()=>{
-        const url=`https://mysterious-garden-19362.herokuapp.com/user/${id}`
-        fetch(url)
-        .then(res=>res.json())
-        .then(data=>setUser(data))
-        },[])
+       useEffect(()=>{
+         fetch(`http://localhost:4000/loginuser/${id}`)
+         .then(result=>result.json())
+        .then(data=>setUpdateData(data))
+         
+       },[])
+    
 
-        const HandleUpdate = (data) =>{
+         const HandleUpdate = event =>{
+            event.preventDefault()
+            const name=event.target.name.value 
+            const email=event.target.email.value 
             
-            const url=`https://mysterious-garden-19362.herokuapp.com/user/${id}`
+             
+            const education=event.target.education.value 
+            const address=event.target.address.value 
+            const phone=event.target.phone.value 
+            const LinkedIn=event.target.linkedIn.value
+            
+            const updateUser={name,education,address,phone,email, LinkedIn}
+            
+            const url=`http://localhost:4000/loginuser/${id}`
                 fetch(url,{
                     method:'PUT',
                     headers:{
                         'content-type':'application/json'
                     },
-                    body:JSON.stringify(data)
+                    body:JSON.stringify(updateUser)
              
                 })
                 .then(res=>res.json())
-                .then(result=>{
-                    console.log(result)
+                .then(data=>{
+                      setIsReload(!isReload)
+                  alert('users update success')
+                   event.target.reset()
                 })
              
-             }
+             } 
 
     return (
-        <div className='login-container'>
+        
+        
+     <div className='login-container'>
             
         <div>
             <h2 className='login-title'>Update User Information</h2>
 
-            <form className='login-form' onSubmit={ handleSubmit(HandleUpdate)} >
+            <form className='login-form' onSubmit={HandleUpdate} >
                 
-            <input className="mb-2" placeholder="name" {...register("name", { required: true, maxLength: 20 })} />
+            <input className="mb-2" name='name' placeholder="name" value={updateData.name} onChange={(e)=>{setUpdateData(e.target.value)}} />
                
-                    <input value={user?.email} type='eamil' name='email' id=''{...register("email")}/>
-                    <input type='text' name='education' id='' placeholder='your Education' {...register("education")}/>
+                    <input value={user?.email} readOnly type='eamil' name='email' />
+                    <input type='text' name='education' value={updateData.education} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Education'/>
                
-                    <input type='text' name='address' id='' placeholder='your Location' {...register("location")}/>
+                    <input type='text' name='address' value={updateData.address} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Location' />
                
-                    <input  type='text' name='phone' id='' placeholder='your Phone' {...register("phone")}/>
-                    <input  type='text' name='linkedIn' id='' placeholder='your LinkedIn' {...register("linkedIn" )}/>
+                    <input  type='text' name='phone' value={updateData.phone} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Phone' />
+                    <input  type='text' name='linkedIn' value={updateData.linkedIn} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your LinkedIn'/>
+                    <input type='submit' value="update"/>
                    
-                    <button>Update</button>
+                   
                 
                
                 
@@ -64,6 +87,9 @@ const UpdateUser = () => {
         </div>
         
     </div>
+            
+     
+
     );
 };
 
