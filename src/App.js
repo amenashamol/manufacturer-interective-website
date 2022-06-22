@@ -14,6 +14,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Blogs from './Pages/Blogs/Blogs';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
+import RequireAdmin from './Pages/Login/RequireAuth';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfiles from './Pages/Dashboard/MyProfiles';
@@ -40,7 +41,7 @@ function App() {
         } >
               <Route index element={<MyProfiles></MyProfiles>}></Route>
               <Route path="review" element={<AddReview></AddReview>}></Route>
-              {/* <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route> */}
+              <Route path="users" element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
               <Route path="order" element={<MyOrders></MyOrders>}></Route>
               <Route path="product" element={<AddProduct></AddProduct>}></Route>
               <Route path="manageorder" element={<Manageorders></Manageorders>}></Route>

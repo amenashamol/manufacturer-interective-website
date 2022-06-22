@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import UpdateUser from './UpdateUser';
 
-const LoginUser = ({user,setIsReload, isReload}) => {
+const LoginUser = ({user,setIsReload, isReload,authuser}) => {
     //    console.log(user)
     const {
         register,
@@ -15,7 +15,7 @@ const LoginUser = ({user,setIsReload, isReload}) => {
         <div className="hero-content flex-col lg:flex-row ">
              <div className="card  shadow-xl h-50">
                    <div className="card-body">
-                       <h2 className="card-title uppercase">{user.name}          Profile</h2>
+                       <h2 className="card-title uppercase">{user.name}          Profile!</h2>
 
                         
                         

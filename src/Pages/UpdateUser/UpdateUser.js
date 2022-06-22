@@ -54,7 +54,7 @@ import auth from '../../firebase.init';
                 })
                 .then(res=>res.json())
                 .then(data=>{
-                      setIsReload(!isReload)
+                    //   setIsReload(!isReload)
                   alert('users update success')
                    event.target.reset()
                 })

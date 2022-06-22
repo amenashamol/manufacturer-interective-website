@@ -11,6 +11,7 @@ import LoginUser from '../UpdateUser/LoginUser';
      const [users, setUsers] =useState([])
      const [isReload, setIsReload] = useState(false);
      const [authuser]=useAuthState(auth)
+     
     
      
     //  useEffect(() => {
@@ -31,7 +32,8 @@ import LoginUser from '../UpdateUser/LoginUser';
                         }
         
                     })
-                .then(res=>res.json())
+                .then(res=>{
+                    return res.json()})
                 .then(data=>setUsers(data))
                  }
                 
@@ -49,7 +51,7 @@ import LoginUser from '../UpdateUser/LoginUser';
         <div>
        {users.map(user=> 
        <LoginUser
-                setIsReload={setIsReload} isReload={isReload}  user={user}
+                setIsReload={setIsReload} isReload={isReload}  user={user} authuser={authuser}
                 />
                 )}
         </div>
