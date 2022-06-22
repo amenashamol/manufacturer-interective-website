@@ -8,7 +8,7 @@ const useToken = user =>{
         const currentUser = {email: email};
         
         if(email){
-            fetch(`http://localhost:4000/logeduser/${email}`, {
+            fetch(`http://localhost:4000/loginuser/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

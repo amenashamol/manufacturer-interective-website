@@ -1,48 +1,43 @@
 import React,{ useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { toast } from 'react-toastify';
+import { useQuery } from 'react-query';
+
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
+import AdminRow from './AdminRow';
 
 
 
 const MakeAdmin = () => {
-    const [user] =useAuthState(auth)
-    const[users,setUsers]=useState([]);
-    
-    
-    
-    useEffect(()=>{
+   
+  
+const { data,isloading,refetch} = useQuery('user', ()=> 
+                fetch('http://localhost:4000/adminuser',{
+                 method: 'GET',
+                 headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+                
+            })
         
-            fetch('http://localhost:4000/loginuser')
-            
             .then(res=>res.json())
-            .then(data=>setUsers(data))
-        
-        },[])
+                
 
-   const makeAdmin=()=>{
-    fetch(`http://localhost:4000/loginuser/admin/${user.email}`,{
-        method:'PUT',
-        headers:{
-            'content-type':'application/json'
-        },
-     } )
+            )
+
+            const events = data ?? []
             
-    .then(res=>res.json())
-    .then(data=>{
-        
-        toast.success('successfully made an admin')
-
-    } )
-   }
+            
     
-    
-    
-    
-
-    return (
-
-        <div> 
+               if(isloading){
+                 <Loading></Loading>
+                }
+            
+   
+     return (
+               
+           <div>
+            
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
@@ -65,21 +60,13 @@ const MakeAdmin = () => {
                         
                                 
                                 {
-                            users.map((a, index) => <tr key={a._id}>
-                                <th>{index + 1}</th>
-                               
-                                <td>{a.name}</td>
-                                <td>{a.email}</td>
-                                <td>{a.education}</td>
-                                <td>{a.location}</td>
-                                <td>{a.linkedIn}</td>
-                                <td>{a.role!=='admin' && <button className='btn btn-xs' onClick={makeAdmin}>MakeAdmin</button>}</td>
-                                <td><button className='btn btn-xs'>RemoveUser</button></td>
-                                
-                               
-                                
-                            </tr>)
-                        } 
+                            events?.map((user, index) => <AdminRow
+                            key={user._id}
+                            user={user} 
+                            index={index}
+                            refetch={refetch}
+                            />
+                       ) }  
                                 
                            
                         
