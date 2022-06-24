@@ -1,49 +1,79 @@
 import React, {useEffect,useState} from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 import './Purchase.css'
+import { useQuery } from 'react-query';
+import { format } from 'date-fns';
 
-const Purchase = ({partInf,setPartInf}) => {
-    const{_id,img,name,description,maximum_order_quantity, minimum_order_quantity, available_order_quantity} =partInf
+
+const Purchase = () => {
+    const [date, setDate] = useState(new Date());
+    const [num, setNum] = useState('');
+    const {id}=useParams()
     const [user] =useAuthState(auth)
-   
+    const formattedDate = format(date, 'PPP');
     
-    
-            
-            
-                
-            
-        
-        
+    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`http://localhost:4000/part?id=${id}`)
+    .then(res => res.json())
+) 
+ if(isLoading){
+    return <Loading></Loading>
+ }
+
+
+ const handleOrder = event => {
+    event.preventDefault();
     
 
-    // const handleCreateUser=event=>{
-    //     event.preventDefault()
-       
-    //     console.log('shipping')
+    const order = {
+        orderId: data._id,
+        orderNmae: data.name,
+         formattedDate,
+         email:user.email,
+        qantiy:event.target.orderQuantity.value,
+        amount:(event.target.orderQuantity.value) * (data.price)
         
-    // }
+        
+    }
+            
+ const url='http://localhost:4000/orders'
+ fetch(url,{
+     method:'POST',
+     headers:{
+         'content-type':'application/json'
+     },
+     body:JSON.stringify(order)
+
+ })
+ .then(res=>res.json())
+ .then(data=>{
+     //   setIsReload(!isReload)
+  // alert('order success')
+    event.target.reset()
+ })
+
+}      
+      
 
     return (
         <div className="hero min-h-screen">
-            
+          
         <div className="hero-content flex-col lg:flex-row ">
              <div className="card  shadow-xl h-50">
-                   <div className="card-body">
-                       <h2 className="card-title uppercase">Cheak</h2>
-
-                        
-                           
-                            <p> {img} </p>
-                            <p> {name} </p>
-                            <p>Education: {description}</p>
-                            <p>maximum_order_quantity: {maximum_order_quantity} </p>
-                            <p>minimum_order_quantity: {minimum_order_quantity} </p>
-                            <p>available_order_quantity: {available_order_quantity} </p>
-                    
+             <h2 className="card-title uppercase text-center">Cheaking your information</h2>
+             <div className="card-body">
                        
-                     </div>
+                             <img className='w-50'  style={{height:"200px"}} src={data.img} alt=""/> 
+                            <p>name: {data.name} </p>
+                            <p>description: {data.description}</p>
+                            <p>maximum_order_quantity: {data.maximum_order_quantity} </p>
+                            <p>minimum_order_quantity: {data.minimum_order_quantity} </p>
+                            <p>available_order_quantity: {data.available_quantity} </p>
+                            <p>price: {data.price} </p>
+                           
+                        </div>
 
              </div>
              <div className='login-container'>
@@ -51,25 +81,25 @@ const Purchase = ({partInf,setPartInf}) => {
             <div>
                 <h2 className='login-title'>Update User Information</h2>
     
-                {/* <form className='login-form' onSubmit={HandleUpdate} >
+                <form onSubmit={handleOrder}>
                     
-                <input className="mb-2" name='name' placeholder="name" value={updateData.name} onChange={(e)=>{setUpdateData(e.target.value)}} />
+                <input className="mb-2" name='name' value={user?.name} placeholder="name"  />
                    
-                        <input value={user?.email} readOnly type='eamil' name='email' />
+                        <input type='eamil' name='email' value={user?.email}/>
                         
-                        <input type='text' name='education' value={updateData.education} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Education'/>
+                        <input type='text' name='phone'  placeholder='01723456345'/>
+                         <textarea type='text' name='phone' placeholder='your complete address'/>
+                        
                    
-                        <input type='text' name='address' value={updateData.address} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Location' />
-                   
-                        <input  type='text' name='phone' value={updateData.phone} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Phone' />
-                        <input  type='text' name='linkedIn' value={updateData.linkedIn} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your LinkedIn'/>
-                        <input type='submit' value="update"/>
+                         <input type='number' name='orderQuantity' value={num.orderQuantity} min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity} onChange={(e)=>{setNum(e.target.value)}} />
+                         <input type='submit' disabled={num.orderQuantity>data.available_quantity} value="Purchase"/>
+                       {/* <Link to={`payment/${data._id}`}> </Link> */}
                        
                        
                     
                    
                     
-                </form> */}
+                </form>
                 
             
             </div>

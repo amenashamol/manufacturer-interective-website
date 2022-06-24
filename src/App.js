@@ -24,6 +24,8 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
 import UpdateUser from './Pages/UpdateUser/UpdateUser';
+import Payment from './Pages/Purchase/Payment';
+import MyPortFolio from './Pages/MyPortFolio';
 
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
       <Navber></Navber>
       <Routes>
         <Route path="/" element={<Home></Home>} />
-        <Route path="/about" element={<About></About>} />
+        <Route path="/portfolio" element={<MyPortFolio></MyPortFolio>} />
         <Route path="/blog" element={<Blogs></Blogs>} />
         <Route path="dashboard" element={
           <RequireAuth>
@@ -52,7 +54,8 @@ function App() {
           </Route>
         <Route path="login" element={<Login></Login>} />
         <Route path="signup" element={<SignUp></SignUp>} />
-        <Route path='/purchase' element={
+        <Route path='/payment/:id' element={<Payment></Payment>}></Route>
+        <Route path='/purchase/:id' element={
           <RequireAuth>
             <Purchase></Purchase>
           </RequireAuth>

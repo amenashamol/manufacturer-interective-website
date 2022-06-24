@@ -5,7 +5,7 @@ import PartsCard from './PartsCard';
 
 const DrillParts = () => {
     const [parts, setParts]=useState([])
-    const [partInf, setPartInf]=useState(null)
+    
     useEffect(() => {
         fetch('http://localhost:4000/parts')
         .then(res=>res.json())
@@ -18,7 +18,8 @@ const DrillParts = () => {
                {
                   parts.map(part=> <PartsCard
                     part={part}
-                    setPartInf={setPartInf}
+                    
+                    
                     >
                   </PartsCard>
                    
@@ -29,9 +30,7 @@ const DrillParts = () => {
               
            </div>
 
-           {partInf && <Purchase 
-            setPartInf={setPartInf}
-            partInf={partInf}></Purchase>}
+           
        
         </div>
     );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PartsCard = ({part,setPartInf}) => {
+const PartsCard = ({part}) => {
     const{_id, img, name, description,minimum_order_quantity ,maximum_order_quantity,available_quantity,price}=part
     return (
-
+        
         <div className="card lg:max-w-lg bg-base-100 shadow-xl">
             <div className='h-64'>
             <figure className="px-5 pt-5">
@@ -20,19 +20,17 @@ const PartsCard = ({part,setPartInf}) => {
                  <p>Minimum_order:{minimum_order_quantity}</p>
                  <p>Available:{available_quantity}</p>
                  <p>Price:{price}</p>
-                 <div className='my-5'>
-                 <label
-                        htmlFor="booking-modal"
-                        
-                        onClick={() => setPartInf(part)}
-                        className="btn btn-sm btn-secondary text-white uppercase bg-gradient-to-r from-secondary to-primary"
-                    >Book</label>
-                 </div>
+                 {/* <div className='my-5'> */}
+                 <Link to={`/purchase/${_id}`}>
+                 <button  class="btn btn-info">Purchase</button>
+                 </Link>
+                 {/* </div> */}
                 
                 </div>
             
             </div>
         </div>
+        
         
     );
 };
