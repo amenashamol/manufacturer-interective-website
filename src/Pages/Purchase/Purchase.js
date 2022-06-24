@@ -6,6 +6,8 @@ import Loading from '../Shared/Loading';
 import './Purchase.css'
 import { useQuery } from 'react-query';
 import { format } from 'date-fns';
+import Payment from './Payment';
+import { toast } from 'react-toastify';
 
 
 const Purchase = () => {
@@ -28,11 +30,13 @@ const Purchase = () => {
     
 
     const order = {
-        orderId: data._id,
-        orderNmae: data.name,
-         formattedDate,
+        
+        formattedDate,
+        orderName:  data.name,
+        
+         
          email:user.email,
-        qantiy:event.target.orderQuantity.value,
+        quantity:event.target.orderQuantity.value,
         amount:(event.target.orderQuantity.value) * (data.price)
         
         
@@ -50,7 +54,7 @@ const Purchase = () => {
  .then(res=>res.json())
  .then(data=>{
      //   setIsReload(!isReload)
-  // alert('order success')
+   toast.success('order success')
     event.target.reset()
  })
 
@@ -92,8 +96,8 @@ const Purchase = () => {
                         
                    
                          <input type='number' name='orderQuantity' value={num.orderQuantity} min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity} onChange={(e)=>{setNum(e.target.value)}} />
-                         <input type='submit' disabled={num.orderQuantity>data.available_quantity} value="Purchase"/>
-                       {/* <Link to={`payment/${data._id}`}> </Link> */}
+                         <input type='submit' className='bg-accentry'  disabled={num.orderQuantity>data.available_quantity} value="Purchase"/>
+                      
                        
                        
                     
