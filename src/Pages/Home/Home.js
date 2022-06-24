@@ -7,7 +7,8 @@ import BussinessSummery from './BussinessSummery';
 import Contact from './Contact';
 import Experts from './Experts';
 import Reviews from './Reviews';
-import Parts from './Tools/Parts';
+import DrillParts from './Tools/DrillParts';
+
 
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
         <div>
            
          <Banner></Banner>
-         <Parts></Parts>
+         <DrillParts></DrillParts>
         
          <Reviews></Reviews>
          <Experts></Experts>

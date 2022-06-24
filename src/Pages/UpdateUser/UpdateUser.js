@@ -74,7 +74,8 @@ import auth from '../../firebase.init';
             <input className="mb-2" name='name' placeholder="name" value={updateData.name} onChange={(e)=>{setUpdateData(e.target.value)}} />
                
                     <input value={user?.email} readOnly type='eamil' name='email' />
-                    <input type='text' name='education' value={updateData.education} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Education'/>
+                    <input value={user?.name} readOnly type='name' name='email' />
+                    {/* <input type='text' name='education' value={updateData.education} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Education'/> */}
                
                     <input type='text' name='address' value={updateData.address} onChange={(e)=>{setUpdateData(e.target.value)}} placeholder='your Location' />
                
