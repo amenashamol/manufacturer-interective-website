@@ -68,25 +68,28 @@ const handleDelete=id=>{
                         <th>Item</th>
                         <th>Quantity</th>
                         <th>Amount</th>
-                        <th></th>
+                        <th>Payment</th>
+                        <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                            data.map((a, index) => <tr key={a._id}>
                                <th>{index+1}</th>
-                               <td>{a.formattedDate}</td>
+                               <td>{a.formattedDate}
+                               </td>
                                 <td>{a.orderName}</td>
                                 <td>{a.quantity}</td>
                                  <td>{a.amount}</td>
-                                 <td><button className="btn btn-xs" onClick={()=>handleDelete(a._id)}>Delete</button></td> 
-                                {/* <td>
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(a.price && a.paid) && <div>
+                                 
+                                <td>
+                                    {(a.amount && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                    {(a.amount && a.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
                                     </div>}
-                                </td> */}
+                                </td>
+                                <td>{!a.paid && <button className="btn btn-xs" onClick={()=>handleDelete(a._id)}>Delete</button>}</td> 
                             </tr>)
                         }
 

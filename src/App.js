@@ -49,6 +49,7 @@ function App() {
               <Route path="manageorder" element={<Manageorders></Manageorders>}></Route>
               <Route path="manageproduct" element={<ManageProducts></ManageProducts>}></Route>
               <Route path="makeadmin" element={<MakeAdmin></MakeAdmin>}></Route>
+              <Route path="payment/:id" element={<Payment></Payment>}></Route>
                
                
           </Route>

@@ -19,7 +19,7 @@ const PartsCard = ({part}) => {
                  <p>maximum_order_quantity:{maximum_order_quantity}</p>
                  <p>Minimum_order:{minimum_order_quantity}</p>
                  <p>Available:{available_quantity}</p>
-                 <p>Price:{price}</p>
+                 <p>Price:${price}</p>
                  {/* <div className='my-5'> */}
                  <Link to={`/purchase/${_id}`}>
                  <div class="card-actions justify-end">

@@ -30,7 +30,7 @@ const Purchase = () => {
     
 
     const order = {
-        
+        userName:event.target.name.value,
         formattedDate,
         orderName:  data.name,
         
