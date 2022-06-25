@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 import './Purchase.css'
 import { useQuery } from 'react-query';
 import { format } from 'date-fns';
-import Payment from './Payment';
+
 import { toast } from 'react-toastify';
 
 

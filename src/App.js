@@ -24,7 +24,7 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
 import UpdateUser from './Pages/UpdateUser/UpdateUser';
-import Payment from './Pages/Purchase/Payment';
+import Payment from './Pages/Dashboard/Payment';
 import MyPortFolio from './Pages/MyPortFolio';
 
 

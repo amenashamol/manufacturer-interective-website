@@ -1,12 +1,12 @@
-// import { Elements } from '@stripe/react-stripe-js';
-// import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading';
-// import CheckoutForm from './CheckoutForm';
+ import CheckoutForm from './CheckoutForm';
 
-// const stripePromise = loadStripe('pk_test_51KzgdMJVa6zVY99CaGts94G8qqJirQWPMAET7VBqrec0wWSxhuuRtgQNPA3SuwzjQKOv6QWwjgMWEfZ83N1qLNUU00IX1ciL6e');
+ const stripePromise = loadStripe('pk_test_51LEYIlA4ZvOXwqZLaG36ithhGcZERKGgXT5fvVSSanynZNjMJs68DsISjBTToWO87pUcLfwRsBb7mAiTiy3F8LoZ00s6Ko0gV2');
 
 const Payment = () => {
     const { id } = useParams();
@@ -35,11 +35,11 @@ const Payment = () => {
                 </div>
             </div>
             <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-                {/* <div class="card-body">
+                <div class="card-body">
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm appointment={appointment} />
+                        <CheckoutForm product={product} />
                     </Elements>
-                </div> */}
+                </div>
             </div>
         </div>
     );
