@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 const Purchase = () => {
     const [date, setDate] = useState(new Date());
-    const [num, setNum] = useState('');
+   
     const {id}=useParams()
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
@@ -41,6 +41,7 @@ const Purchase = () => {
         
         
     }
+   
             
  const url='http://localhost:4000/orders'
  fetch(url,{
@@ -95,8 +96,8 @@ const Purchase = () => {
                          <textarea type='text' name='phone' placeholder='your complete address'/>
                         
                    
-                         <input type='number' name='orderQuantity' value={num.orderQuantity} min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity} onChange={(e)=>{setNum(e.target.value)}} />
-                         <input type='submit' className='bg-accentry'  disabled={num.orderQuantity>data.available_quantity} value="Purchase"/>
+                         <input type='number' name='orderQuantity'  min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity}  />
+                         <input type='submit' className='bg-accentry'   value="Purchase" />
                       
                        
                        

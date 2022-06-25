@@ -22,7 +22,9 @@ const PartsCard = ({part}) => {
                  <p>Price:{price}</p>
                  {/* <div className='my-5'> */}
                  <Link to={`/purchase/${_id}`}>
-                 <button  class="btn btn-info">Purchase</button>
+                 <div class="card-actions justify-end">
+                 <button class="btn btn-primary">Buy Now</button>
+    </div>
                  </Link>
                  {/* </div> */}
                 

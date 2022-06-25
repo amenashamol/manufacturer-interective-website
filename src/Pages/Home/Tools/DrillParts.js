@@ -7,7 +7,7 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('http://localhost:4000/parts')
+        fetch('http://localhost:4000/allparts')
         .then(res=>res.json())
         .then(data=>setParts(data)) 
      }, [])
