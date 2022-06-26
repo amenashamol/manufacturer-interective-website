@@ -1,23 +1,27 @@
 import React from 'react';
+import { format } from 'date-fns';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-const Review = ({ review }) => {
+const Review = ({ review, date }) => {
+    const formattedDate = format(date, 'PPP');
+    const {Rating ,Review}=review
+    const[user]=useAuthState(auth)
     return (
-        <div className="card lg:max-w-lg bg-base-100 shadow-xl">
-            <div className="card-body">
-                <p>Exclusive premium models with prominent features such as hardened and ground,unbreakable arm, clamping arrangement,etc are manufactued under the Indian Machine Tools Corp. </p>
-                <div className="flex items-center">
-                    <div className="avatar">
-                        <div className="w-16 rounded-full ring ring-primary ring-offset-base-100 mr-5">
-                            <img src={review.img} alt=""/>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 className='text-xl'>{review.name}</h4>
-                        <p>{review.location}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="card w-96 bg-base-100 shadow-xl">
+  
+  <div class="card-body">
+    <h2 class="card-title">
+      {Rating} out of 5
+      <div class="badge badge-secondary">NEW</div>
+    </h2>
+    <p>{Review}</p>
+    <div class="card-actions justify-end">
+      <div class="badge badge-outline">{formattedDate}</div> 
+      <div class="badge badge-outline">{user?.displayName}</div>
+    </div>
+  </div>
+</div>
     );
 };
 

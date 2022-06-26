@@ -88,7 +88,7 @@ const Purchase = () => {
     
                 <form onSubmit={handleOrder}>
                     
-                <input className="mb-2" name='name' value={user?.name} placeholder="name"  />
+                <input className="mb-2" name='name' value={user?.displayName} placeholder="name"  />
                    
                         <input type='eamil' name='email' value={user?.email}/>
                         

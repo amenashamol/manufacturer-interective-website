@@ -71,7 +71,7 @@ import auth from '../../firebase.init';
 
             <form className='login-form' onSubmit={HandleUpdate} >
                 
-            <input className="mb-2" name='name' placeholder="name" value={updateData.name} onChange={(e)=>{setUpdateData(e.target.value)}} />
+            <input className="mb-2" name='name' placeholder="name" value={user?.displayName} onChange={(e)=>{setUpdateData(e.target.value)}} />
                
                     <input value={user?.email} readOnly type='eamil' name='email' />
                     {/* <input value={user?.name} readOnly type='name' name='email' /> */}
