@@ -21,9 +21,11 @@ const Manageorders = () => {
                     <tr>
                         <th></th>
                         <th>Info</th>
+                        <th>date</th>
                         <th>Item</th>
                         <th>Quantity</th>
                         <th>Amount</th>
+                        <th>payment</th>
                     </tr>
                 </thead>
                 <tbody>

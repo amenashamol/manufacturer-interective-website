@@ -16,7 +16,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAuth from './Pages/Login/RequireAuth';
 import RequireAdmin from './Pages/Login/RequireAuth';
 import AddReview from './Pages/Dashboard/AddReview';
-import MyOrders from './Pages/Dashboard/MyOrders';
+
 import MyProfiles from './Pages/Dashboard/MyProfiles';
 import Manageorders from './Pages/Dashboard/Manageorders';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
@@ -26,6 +26,7 @@ import Purchase from './Pages/Purchase/Purchase';
 import UpdateUser from './Pages/UpdateUser/UpdateUser';
 import Payment from './Pages/Dashboard/Payment';
 import MyPortFolio from './Pages/MyPortFolio';
+import MyOrders from './Pages/Dashboard/DeleteOrder/MyOrders';
 
 
 function App() {

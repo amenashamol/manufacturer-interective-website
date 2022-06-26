@@ -1,14 +1,16 @@
 import { signOut } from 'firebase/auth';
 import React ,{ useEffect, useState }from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import auth from '../../firebase.init';
 import {toast} from 'react-toastify'
 import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading';
+import Loading from '../../Shared/Loading';
+import MyOrder from './MyOrder';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import DeleteConfirmModal from './DeleteConfirmModal';
 
 const MyOrders = () => {
-    const [myOrders, setMyOrders] = useState([]);
+    const [deletingOrder, setDeletingOrder]=useState(null)
     const [user] = useAuthState(auth);
      const navigate = useNavigate()
 
@@ -38,25 +40,26 @@ const MyOrders = () => {
         //  const events = data ?? []
 
 
-const handleDelete=id=>{
-    fetch(`http://localhost:4000/order/${id}`,{
-        method:'DELETE',
-        headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
-       }
-    })
+// const handleDelete=id=>{
+//     fetch(`http://localhost:4000/order/${id}`,{
+//         method:'DELETE',
+//         headers: {
+//             authorization: `Bearer ${localStorage.getItem('accessToken')}`
+//        }
+//     })
 
-    .then(res=>res.json())
-    .then(data=>{
-        if(data.deletedCount){
-            toast.success(`order is deleted`)
-             refetch()
-        }
-    })
-}
+//     .then(res=>res.json())
+//     .then(data=>{
+//         if(data.deletedCount){
+//             window.confirm('are you sure to delete')
+//             toast.success(`order is deleted`)
+//              refetch()
+//         }
+//     })
+// }
 
     return (
-        <div>
+        
             <div>
             
             <div className="overflow-x-auto">
@@ -74,31 +77,29 @@ const handleDelete=id=>{
                     </thead>
                     <tbody>
                         {
-                           data.map((a, index) => <tr key={a._id}>
-                               <th>{index+1}</th>
-                               <td>{a.formattedDate}
-                               </td>
-                                <td>{a.orderName}</td>
-                                <td>{a.quantity}</td>
-                                 <td>{a.amount}</td>
-                                 
-                                <td>
-                                    {(a.amount && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
-                                    {(a.amount && a.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
-                                    </div>}
-                                </td>
-                                <td>{!a.paid && <button className="btn btn-xs" onClick={()=>handleDelete(a._id)}>Delete</button>}</td> 
-                            </tr>)
+                           data.map((a, index) => <MyOrder
+                           key={a._id}
+                           a={a}
+                           setDeletingOrder={setDeletingOrder}
+                           index={index}
+                           refetch={refetch}
+                           >
+
+                           </MyOrder>)
                         }
 
 
                     </tbody>
                 </table>
             </div>
+            {deletingOrder && <DeleteConfirmModal
+                deletingOrder={deletingOrder}
+                refetch={refetch}
+                setDeletingOrder={setDeletingOrder}
+            ></DeleteConfirmModal>}
         </div>
-        </div>
+       
+    
     );
 };
 

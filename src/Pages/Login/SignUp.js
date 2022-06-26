@@ -32,22 +32,17 @@ const SignUp = () => {
         signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
     }
 
-    
-
-   
-   
-
-    
-
-    if(token){
+    if (token) {
         navigate('/')
     }
 
-    const onSubmit =  data => {
-         createUserWithEmailAndPassword(data.email, data.password);
-         updateProfile({ displayName: data.name });
-        
-       
+  
+
+    const onSubmit = async data => {
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name });
+      
+        navigate('/');
     }
     return (
         <div className='flex h-screen justify-center items-center'>
