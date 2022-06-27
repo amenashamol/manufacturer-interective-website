@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import Navber from './Pages/Shared/Navber';
 import { Routes, Route} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  // import aos from 'aos'
-  // import 'aos/dist/aos.css'
-
+import 'react-toastify/dist/ReactToastify.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
 import About from './Pages/About/About'
 import Login from './Pages/Login/Login'
 import SignUp from './Pages/Login/SignUp';
@@ -32,6 +32,9 @@ import MyOrders from './Pages/Dashboard/DeleteOrder/MyOrders';
 
 
 function App() {
+      useEffect(()=>{
+        AOS.init()
+      },[])
   return (
     <div className='max-w-7xl mx-auto px-12'>
       <Navber></Navber>

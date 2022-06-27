@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# Drill-Machine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# features and functionality
+
+- [] firebase.init
+- [] Routes
+- [] Navber
+- [] SignIn
+- [] SignOut
+- [] SignInWithGoogle
+- [] SignInWithGithub
+- [] ErrorHandleing
+- [] Conform Password
+- [] Reset Password
+- [] Service Page
+- [] About Page
+- [] .env.local 
+- [] -redirect page 
+- [] Toast
+- [] RequiredAuth
+
+
+# technologies (frameworks, libraries)
+- [] react-router
+- [] react-bootstrap
+- [] firebase
+- [] react-firebase-hooks
+- [] bootstrap
+- [] daisyui
+- [] date-fns
+- [] react-helmet-async
+- [] react-hook-form
+- [] react-modal
+- [] react-query
+- [] react-router-dom
+- [] react-toastify
+
+This project was bootstrapped with [Create React App](https://github.com/amenashamol/manufacturer-interective-website).
 
 ## Available Scripts
 
