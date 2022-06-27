@@ -17,7 +17,11 @@ const Purchase = () => {
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
     
-    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`http://localhost:4000/part?id=${id}`)
+    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`http://localhost:4000/part?id=${id}`,{
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+       }
+    })
     .then(res => res.json())
 ) 
  if(isLoading){
@@ -81,32 +85,24 @@ const Purchase = () => {
                         </div>
 
              </div>
-             <div className='login-container'>
-            
-            <div>
-                <h2 className='login-title'>Update User Information</h2>
+             <div className="card  lg:max-w-lg bg-base-100 shadow-xl  ">
+        <h2 className="card-actions justify-center">Update user Information</h2>
+      <div className=" card-body  " > 
     
-                <form onSubmit={handleOrder}>
+                <form className="card-actions justify-center" onSubmit={handleOrder}>
                     
-                <input className="mb-2" name='name' value={user?.displayName} placeholder="name"  />
+                        <input className="input input-bordered input-xs w-full max-w-xs my-2 " name='name' value={user?.displayName} placeholder="name"  />
                    
-                        <input type='eamil' name='email' value={user?.email}/>
+                        <input className="input input-bordered input-xs w-full max-w-xs my-2 " type='eamil' name='email' value={user?.email}/>
                         
-                        <input type='text' name='phone'  placeholder='01723456345'/>
-                         <textarea type='text' name='phone' placeholder='your complete address'/>
+                        <input className="input input-bordered input-xs w-full max-w-xs my-2 " type='text' name='phone'  placeholder='01723456345' required/>
+                         <textarea className="textarea textarea-primary " type='text' name='phone' placeholder='your complete address' required/>
                         
                    
-                         <input type='number' name='orderQuantity'  min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity}  />
-                         <input type='submit' className='bg-accentry'   value="Purchase" />
-                      
-                       
-                       
-                    
-                   
-                    
+                         <input className="input input-bordered input-xs w-full max-w-xs my-2 " type='number' name='orderQuantity' required min={data.minimum_order_quantity} max={data.maximum_order_quantit} placeholder={data.minimum_order_quantity} />
+                         <input className="input input-bordered input-xs w-full max-w-xs my-2 bg-purple-300 "  type='submit'   value="Purchase" />
                 </form>
                 
-            
             </div>
             
         </div>

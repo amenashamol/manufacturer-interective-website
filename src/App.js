@@ -3,6 +3,8 @@ import Navber from './Pages/Shared/Navber';
 import { Routes, Route} from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  // import aos from 'aos'
+  // import 'aos/dist/aos.css'
 
 import About from './Pages/About/About'
 import Login from './Pages/Login/Login'
@@ -25,7 +27,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Purchase from './Pages/Purchase/Purchase';
 import UpdateUser from './Pages/UpdateUser/UpdateUser';
 import Payment from './Pages/Dashboard/Payment';
-import MyPortFolio from './Pages/MyPortFolio';
+import MyPortFolio from './Pages/About/MyPortFolio';
 import MyOrders from './Pages/Dashboard/DeleteOrder/MyOrders';
 
 

@@ -7,7 +7,12 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('http://localhost:4000/allparts')
+        fetch('http://localhost:4000/allparts',{
+            method:'GET',
+            headers:{
+                'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+            }
+         })
         .then(res=>res.json())
         .then(data=>setParts(data)) 
      }, [])

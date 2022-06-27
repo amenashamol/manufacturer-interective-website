@@ -37,26 +37,7 @@ const MyOrders = () => {
         if(isLoading){
             return <Loading></Loading>
          }
-        //  const events = data ?? []
-
-
-// const handleDelete=id=>{
-//     fetch(`http://localhost:4000/order/${id}`,{
-//         method:'DELETE',
-//         headers: {
-//             authorization: `Bearer ${localStorage.getItem('accessToken')}`
-//        }
-//     })
-
-//     .then(res=>res.json())
-//     .then(data=>{
-//         if(data.deletedCount){
-//             window.confirm('are you sure to delete')
-//             toast.success(`order is deleted`)
-//              refetch()
-//         }
-//     })
-// }
+        
 
     return (
         

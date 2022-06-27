@@ -11,8 +11,9 @@ const ManageProduct = () => {
     const [deletingProducts, setDeletingProducts]=useState(null)
     
     const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:4000/allproduct', {
+        method: 'GET',
          headers: {
-             authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
      }).then(res => res.json()));
 

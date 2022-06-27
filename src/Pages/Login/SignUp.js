@@ -5,10 +5,11 @@ import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../hooks/useToken';
+import SocialLogin from './SocialLogin';
 
 
 const SignUp = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    //const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth)
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         createUserWithEmailAndPassword,
@@ -19,17 +20,17 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
      
-    const [token] =useToken(user || gUser)
+    const [token] =useToken(user)
     const navigate = useNavigate();
-
+    
     let signInError;
 
-    if (loading || gLoading || updating) {
+    if (loading || updating) {
         return <Loading></Loading>
     }
 
-    if (error || gError || updateError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small></p>
+    if (error ||  updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message ||   updateError?.message}</small></p>
     }
 
     if (token) {
@@ -39,8 +40,8 @@ const SignUp = () => {
   
 
     const onSubmit = async data => {
-        await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name });
+        await createUserWithEmailAndPassword(data.email, data.password,data.name);
+       await updateProfile({ displayName: data.name });
       
         navigate('/');
     }
@@ -125,10 +126,7 @@ const SignUp = () => {
                     </form>
                     <p><small>Already have an account? <Link className='text-primary' to="/login">Please login</Link></small></p>
                     <div className="divider">OR</div>
-                    <button
-                        onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
-                    >Continue with Google</button>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div >

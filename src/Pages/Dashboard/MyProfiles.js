@@ -26,12 +26,11 @@ import LoginUser from '../UpdateUser/LoginUser';
         useEffect(()=>{
                 if (authuser) {
                     fetch(`http://localhost:4000/loginuser?email=${authuser.email}` ,{
-                        method: 'GET',
-                         headers: {
-                            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                        method:'GET',
+                        headers:{
+                            'authorization':`Bearer ${localStorage.getItem('accessToken')}`
                         }
-        
-                    })
+                     })
                 .then(res=>{
                     return res.json()})
                 .then(data=>setUsers(data))

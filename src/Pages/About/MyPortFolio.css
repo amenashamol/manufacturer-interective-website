@@ -1,0 +1,50 @@
+.border{
+    
+  
+  
+    /* padding-left: 8px; */
+    border-left: 8px solid;
+    border-image: linear-gradient(rgb(5, 126, 156),cyan);
+    border-image-slice: 3;
+}
+
+
+.spn{
+    color:#ff3c00;
+}
+
+footer {
+    background-color: rgb(12, 12, 11);
+}
+
+footer p{
+    text-align: center;
+    padding-bottom: 70px;
+    color:rgb(250, 216, 216);
+}
+
+footer h1{
+    text-align: center;
+    color: white;
+    padding-bottom: 2px;
+    padding-top: 30px;
+}
+
+
+
+
+
+@media (max-width: 576px){
+    .about{
+        flex-direction: column;
+    }
+
+    .goal{
+        width: 100%;
+    }
+
+    .photo img{
+        margin: auto;
+    }
+    
+}
