@@ -12,7 +12,7 @@ const MakeAdmin = () => {
    
   
 const { data,isloading,refetch} = useQuery('user', ()=> 
-                fetch('http://localhost:4000/adminuser',{
+                fetch('https://mysterious-garden-19362.herokuapp.com/adminuser',{
                  method: 'GET',
                  headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

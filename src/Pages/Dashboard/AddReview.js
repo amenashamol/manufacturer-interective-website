@@ -11,7 +11,7 @@ const  Addreview = () => {
   const onSubmit = (data) =>{
   
 
-   const url='http://localhost:4000/review'
+   const url='https://mysterious-garden-19362.herokuapp.com/review'
    fetch(url,{
        method:'POST',
        headers:{

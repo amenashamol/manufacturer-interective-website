@@ -11,7 +11,7 @@ const useToken =user  =>{
         const currentUser = {email: email,displayName:displayName};
         
         if(email){
-            fetch(`http://localhost:4000/loginuser/${email}`, {
+            fetch(`https://mysterious-garden-19362.herokuapp.com/loginuser/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'

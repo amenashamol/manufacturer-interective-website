@@ -15,7 +15,7 @@ import LoginUser from '../UpdateUser/LoginUser';
     
      
     //  useEffect(() => {
-    //     fetch("http://localhost:4000/loginuser")
+    //     fetch("https://mysterious-garden-19362.herokuapp.com/loginuser")
     //       .then((res) => res.json())
     //       .then((data) => setUsers(data));
     //   }, [isReload]);
@@ -25,7 +25,7 @@ import LoginUser from '../UpdateUser/LoginUser';
     
         useEffect(()=>{
                 if (authuser) {
-                    fetch(`http://localhost:4000/loginuser?email=${authuser.email}` ,{
+                    fetch(`https://mysterious-garden-19362.herokuapp.com/loginuser?email=${authuser.email}` ,{
                         method:'GET',
                         headers:{
                             'authorization':`Bearer ${localStorage.getItem('accessToken')}`
