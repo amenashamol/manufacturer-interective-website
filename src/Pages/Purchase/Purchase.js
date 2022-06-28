@@ -17,7 +17,7 @@ const Purchase = () => {
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
     
-    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`https://mysterious-garden-19362.herokuapp.com/part?id=${id}`,{
+    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`https://aqueous-harbor-99423.herokuapp.com/part?id=${id}`,{
         method:'Get',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const Purchase = () => {
     }
    
             
- const url='https://mysterious-garden-19362.herokuapp.com/orders'
+ const url='https://aqueous-harbor-99423.herokuapp.com/orders'
  fetch(url,{
      method:'POST',
      headers:{

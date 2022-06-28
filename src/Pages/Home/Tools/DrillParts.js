@@ -7,7 +7,7 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('https://mysterious-garden-19362.herokuapp.com/allparts',{
+        fetch('https://aqueous-harbor-99423.herokuapp.com/allparts',{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`

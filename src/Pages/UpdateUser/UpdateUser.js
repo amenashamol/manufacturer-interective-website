@@ -18,7 +18,7 @@ import auth from '../../firebase.init';
         } = useForm();
 
        useEffect(()=>{
-         fetch(`https://mysterious-garden-19362.herokuapp.com/updateuser/${id}`,{
+         fetch(`https://aqueous-harbor-99423.herokuapp.com/updateuser/${id}`,{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ import auth from '../../firebase.init';
             
             const updateUser={name,education,address,phone,email, LinkedIn}
             
-            const url=`https://mysterious-garden-19362.herokuapp.com/updateuser/${id}`
+            const url=`https://aqueous-harbor-99423.herokuapp.com/updateuser/${id}`
                 fetch(url,{
                     method:'PUT',
                     headers:{
