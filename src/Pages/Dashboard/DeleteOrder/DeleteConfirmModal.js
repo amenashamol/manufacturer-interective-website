@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteConModal = ({ refetch,deletingOrder,setDeletingOrder}) => {
     
     const {_id, orderName} = deletingOrder;
-
+           
     const handleDelete = (id) => {
         fetch(`http://localhost:4000/order/${id}`, {
             method: 'DELETE',

@@ -17,7 +17,7 @@ const MyPortFolio = () => {
 
                  <div className='border-l-4 border-indigo-500/75 ' >
                 <h2 data-aos='fade-right' data-aos-delay='200' data-aos-duration='1000' className="text-4xl font-bold "> Mt <span className='text-blue-600/100' > Amena Khatun</span></h2>
-                <h3 data-aos='fade-right' data-aos-delay='400' data-aos-duration='900' className="text-xl font-semibold my-3 mx-8 text-orange-700 ">Full Stack Wev Development</h3>
+                <h3 data-aos='fade-right' data-aos-delay='400' data-aos-duration='900' className="text-xl font-semibold my-3 mx-8 text-orange-700 ">Full Stack Web Development</h3>
                 <p data-aos='fade-right' data-aos-delay='600' data-aos-duration='800' className='my-3 mx-8 '>I am a highly competent IT professional with a proven track record in designing websites, networking and managing databases. I have strong technical skills as well as excellent interpersonal skills, enabling me to interact with a wide range of clients. I am eager to be challenged in order to grow and further improve my IT skills. My greatest passion is in life is using my technical know-how to benefit other people and organisations.</p>
                 </div>
                 </div>          
@@ -45,7 +45,7 @@ const MyPortFolio = () => {
                 <div className=" card-body  bg-base-100 " > 
                  <div className='border-l-4 border-orange-500 my-1'>
                     <h2 className="text-4xl font-bold  my-4 ">My <span className='text-green-500 '>Education :</span> </h2>
-                <h4 className="text-2xl font-semibold mx-8 ">Bachelor In <span className='text-primary'>Computer Engineering</span> </h4>
+                <h4 className="text-2xl font-semibold mx-8 ">Bachelor In <span className='text-primary'>Computer Science & Engineering</span> </h4>
                 </div>
                 <div className="divider "></div>
                 <div className='border-l-4 border-orange-500/75'>

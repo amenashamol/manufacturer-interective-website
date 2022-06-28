@@ -6,10 +6,11 @@ const Manageorders = () => {
 
     useEffect(()=>{
     fetch('http://localhost:4000/allorders',{
+        method: 'GET',
         headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
        }
-    })
+     })
     .then(res=> res.json())
     .then(data=>setAllOrders(data))
  

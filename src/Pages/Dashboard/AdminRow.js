@@ -37,7 +37,7 @@ const AdminRow = ({user,index,refetch}) => {
                                 <td>{user.location}</td>
                                 <td>{user.linkedIn}</td>
                                 <td>{user.role!=='admin' && <button className='btn btn-xs' onClick={makeAdmin}>MakeAdmin</button>}</td>
-                                <td><button className='btn btn-xs'>RemoveUser</button></td>
+                                
                                 
                                
                                 

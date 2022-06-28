@@ -23,7 +23,7 @@ const DrillParts = () => {
                {
                   parts.map(part=> <PartsCard
                     part={part}
-                    
+                    key={part._id}
                     
                     >
                   </PartsCard>

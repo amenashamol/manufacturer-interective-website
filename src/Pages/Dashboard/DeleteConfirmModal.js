@@ -16,7 +16,7 @@ const DeleteConfirmModal = ({deletingProducts, refetch, setDeletingProducts}) =>
             .then(data => {
                 console.log(data);
                 if (data.deletedCount) {
-                    toast.success(`Doctor: ${name} is deleted.`)
+                    toast.success(`Product: ${name} is deleted.`)
                     setDeletingProducts(null);
                     refetch();
                 }

@@ -10,10 +10,10 @@ import AllProduct from './AllProduct';
 const ManageProduct = () => {
     const [deletingProducts, setDeletingProducts]=useState(null)
     
-    const { data: products, isLoading, refetch } = useQuery('products', () => fetch('http://localhost:4000/allproduct', {
-        method: 'GET',
-         headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    const { data: products, isLoading, refetch } = useQuery([], () => fetch('http://localhost:4000/allproduct', {
+        method:'GET', 
+       headers: {
+             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
      }).then(res => res.json()));
 
@@ -27,6 +27,7 @@ const ManageProduct = () => {
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                {
                   products.map(product=> <AllProduct
+                    key={product._id}
                     product={product}
                     refetch={refetch}
                     setDeletingProducts={setDeletingProducts}

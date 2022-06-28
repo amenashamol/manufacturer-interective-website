@@ -13,7 +13,7 @@
     "img": "https://i.ibb.co/FY2CbTG/irwin.jpg",
     "name": "Irwin",
     "description":"Brand IRWIN Item,Dimensions LxWxH 7x2.63x9.38 inches,Item Weight 6.5 Pounds",
-    "maximum_order_quantity":00,
+    "maximum_order_quantity":100,
     "minimum_order_quantity":20,
     "available_quantity":3000,
     "price":800

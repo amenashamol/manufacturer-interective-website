@@ -16,7 +16,7 @@ const AllProduct = ({product,setDeletingProducts}) => {
            
             <div className="card-body items-center  ">
                 <div className='h-60 '>
-                <h2 className="card-title">{name}</h2>
+                <h2 className="card-title card-actions justify-center text-indigo-500">{name}</h2>
                  <p>{description}</p>
                  <p>maximum_order_quantity:{maximum_order_quantity}</p>
                  <p>Minimum_order:{minimum_order_quantity}</p>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const CheckoutForm = ({ product }) => {
-   const stripe = useStripe();
+    const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('');
@@ -10,7 +10,7 @@ const CheckoutForm = ({ product }) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, amount , orderName } = product;
+    const { _id, amount, orderName } = product;
 
     useEffect(() => {
         fetch('http://localhost:4000/create-payment-intent', {
@@ -19,7 +19,7 @@ const CheckoutForm = ({ product }) => {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify({ amount })
+            body: JSON.stringify({amount })
         })
             .then(res => res.json())
             .then(data => {
@@ -46,12 +46,12 @@ const CheckoutForm = ({ product }) => {
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card
-        })
+        });
 
         setCardError(error?.message || '')
         setSuccess('');
         setProcessing(true);
-       // confirm card payment
+        // confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -74,11 +74,10 @@ const CheckoutForm = ({ product }) => {
             setTransactionId(paymentIntent.id);
             console.log(paymentIntent);
             setSuccess('Congrats! Your payment is completed.')
-        
             
             //store payment on database
             const payment = {
-                product: _id,
+                appointment: _id,
                 transactionId: paymentIntent.id
             }
             fetch(`http://localhost:4000/booking/${_id}`, {
@@ -94,8 +93,8 @@ const CheckoutForm = ({ product }) => {
                 console.log(data);
             })
 
-    }   
-     }
+        }
+    }
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -115,21 +114,19 @@ const CheckoutForm = ({ product }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe|| !clientSecret }>
+                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>
-             
-             {
+            {
                 cardError && <p className='text-red-500'>{cardError}</p>
-             }
-
+            }
             {
                 success && <div className='text-green-500'>
                     <p>{success}  </p>
                     <p>Your transaction Id: <span className="text-orange-500 font-bold">{transactionId}</span> </p>
                 </div>
-            } 
+            }
         </>
     );
 };
