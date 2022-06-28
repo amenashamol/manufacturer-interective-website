@@ -10,7 +10,7 @@ const DrillParts = () => {
         fetch('https://mysterious-garden-19362.herokuapp.com/allparts',{
             method:'GET',
             headers:{
-                'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+                'content-type':'application/json'
             }
          })
         .then(res=>res.json())

@@ -10,7 +10,7 @@ const Reviews = () => {
     fetch('https://mysterious-garden-19362.herokuapp.com/review',{
         method: 'GET',
          headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            'content-type':'application/json'
         }
      })
     .then(res=> res.json())
