@@ -18,6 +18,7 @@ const Purchase = () => {
     const formattedDate = format(date, 'PPP');
     
     const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`https://mysterious-garden-19362.herokuapp.com/part?id=${id}`,{
+        method:'Get',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
        }
