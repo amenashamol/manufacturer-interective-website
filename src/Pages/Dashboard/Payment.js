@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://tranquil-eyrie-90418.herokuapp.com/booking/${id}`;
+    const url = `http://localhost:4000/booking/${id}`;
 
     const { data: product, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',

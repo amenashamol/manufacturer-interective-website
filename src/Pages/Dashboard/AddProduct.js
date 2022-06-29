@@ -11,7 +11,7 @@ const  AddProduct = () => {
   const onSubmit = (data) =>{
   
 
-   const url='https://tranquil-eyrie-90418.herokuapp.com/product'
+   const url='http://localhost:4000/product'
    fetch(url,{
        method:'POST',
        headers:{

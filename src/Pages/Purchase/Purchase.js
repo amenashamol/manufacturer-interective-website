@@ -17,7 +17,7 @@ const Purchase = () => {
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
     
-    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`https://tranquil-eyrie-90418.herokuapp.com/part?id=${id}`,{
+    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`http://localhost:4000/part?id=${id}`,{
         method:'Get',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const Purchase = () => {
     }
    
             
- const url='https://tranquil-eyrie-90418.herokuapp.com/orders'
+ const url='http://localhost:4000/orders'
  fetch(url,{
      method:'POST',
      headers:{

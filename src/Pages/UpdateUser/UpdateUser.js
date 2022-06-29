@@ -18,7 +18,7 @@ import auth from '../../firebase.init';
         } = useForm();
 
        useEffect(()=>{
-         fetch(`https://tranquil-eyrie-90418.herokuapp.com/updateuser/${id}`,{
+         fetch(`http://localhost:4000/updateuser/${id}`,{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ import auth from '../../firebase.init';
             
             const updateUser={name,education,address,phone,email, LinkedIn}
             
-            const url=`https://tranquil-eyrie-90418.herokuapp.com/updateuser/${id}`
+            const url=`http://localhost:4000/updateuser/${id}`
                 fetch(url,{
                     method:'PUT',
                     headers:{
