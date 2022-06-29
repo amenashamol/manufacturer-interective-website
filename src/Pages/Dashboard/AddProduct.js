@@ -11,7 +11,7 @@ const  AddProduct = () => {
   const onSubmit = (data) =>{
   
 
-   const url='https://aqueous-harbor-99423.herokuapp.com/product'
+   const url='https://tranquil-eyrie-90418.herokuapp.com/product'
    fetch(url,{
        method:'POST',
        headers:{

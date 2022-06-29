@@ -13,7 +13,7 @@ const CheckoutForm = ({ product }) => {
     const { _id, amount, orderName } = product;
 
     useEffect(() => {
-        fetch('https://aqueous-harbor-99423.herokuapp.com/create-payment-intent', {
+        fetch('https://tranquil-eyrie-90418.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ product }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://aqueous-harbor-99423.herokuapp.com/booking/${_id}`, {
+            fetch(`https://tranquil-eyrie-90418.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

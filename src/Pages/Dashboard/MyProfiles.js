@@ -15,7 +15,7 @@ import LoginUser from '../UpdateUser/LoginUser';
     
      
     //  useEffect(() => {
-    //     fetch("https://aqueous-harbor-99423.herokuapp.com/loginuser")
+    //     fetch("https://tranquil-eyrie-90418.herokuapp.com/loginuser")
     //       .then((res) => res.json())
     //       .then((data) => setUsers(data));
     //   }, [isReload]);
@@ -25,7 +25,7 @@ import LoginUser from '../UpdateUser/LoginUser';
     
         useEffect(()=>{
                 if (authuser) {
-                    fetch(`https://aqueous-harbor-99423.herokuapp.com/loginuser?email=${authuser.email}` ,{
+                    fetch(`https://tranquil-eyrie-90418.herokuapp.com/loginuser?email=${authuser.email}` ,{
                         method:'GET',
                         headers:{
                             'authorization':`Bearer ${localStorage.getItem('accessToken')}`

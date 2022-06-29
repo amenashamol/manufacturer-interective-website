@@ -11,7 +11,7 @@ const  Addreview = () => {
   const onSubmit = (data) =>{
   
 
-   const url='https://aqueous-harbor-99423.herokuapp.com/review'
+   const url='https://tranquil-eyrie-90418.herokuapp.com/review'
    fetch(url,{
        method:'POST',
        headers:{
