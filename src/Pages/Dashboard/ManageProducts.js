@@ -15,7 +15,7 @@ const ManageProduct = () => {
        headers: {
              authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
-     }).then(res => res.json()));
+     }).then(res => res.text()));
 
      
     if (isLoading) {
