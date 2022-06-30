@@ -1,0 +1,74 @@
+[debug] [2022-06-30T13:04:30.792Z] ----------------------------------------------------------------------
+[debug] [2022-06-30T13:04:30.795Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dbwctp64\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2022-06-30T13:04:30.795Z] CLI Version:   3.16.0
+[debug] [2022-06-30T13:04:30.795Z] Platform:      win32
+[debug] [2022-06-30T13:04:30.795Z] Node Version:  v16.15.1
+[debug] [2022-06-30T13:04:30.797Z] Time:          Thu Jun 30 2022 19:04:30 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-30T13:04:30.797Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-30T13:04:30.814Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2022-06-30T13:04:30.815Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\projects\assignment-12
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-06-30T13:04:39.671Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Thu Jun 30 2022 19:04:39 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-30T13:05:01.211Z] Error: connect ETIMEDOUT 104.197.85.31:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 104.197.85.31:443
+[debug] [2022-06-30T13:06:23.881Z] ----------------------------------------------------------------------
+[debug] [2022-06-30T13:06:23.884Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dbwctp64\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2022-06-30T13:06:23.885Z] CLI Version:   3.16.0
+[debug] [2022-06-30T13:06:23.885Z] Platform:      win32
+[debug] [2022-06-30T13:06:23.885Z] Node Version:  v16.15.1
+[debug] [2022-06-30T13:06:23.886Z] Time:          Thu Jun 30 2022 19:06:23 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-30T13:06:23.886Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-30T13:06:23.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2022-06-30T13:06:23.904Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\projects\assignment-12
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-06-30T13:06:35.056Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Thu Jun 30 2022 19:06:35 GMT+0600 (Bangladesh Standard Time)
