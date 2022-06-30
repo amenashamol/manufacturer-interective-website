@@ -12,7 +12,7 @@ const MakeAdmin = () => {
    
   
 const { data,isloading,refetch} = useQuery('user', ()=> 
-                fetch('https://evening-woodland-05842.herokuapp.com/adminuser'
+                fetch('http://localhost:4000/adminuser'
                 ,{
                  method: 'GET',
                  headers: {

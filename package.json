@@ -60,17 +60,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.0.24"
-  },
-  "description": "# features and functionality",
-  "main": "tailwind.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amenashamol/manufacturer-interective-website.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/amenashamol/manufacturer-interective-website/issues"
-  },
-  "homepage": "https://github.com/amenashamol/manufacturer-interective-website#readme"
+  }
+  
 }

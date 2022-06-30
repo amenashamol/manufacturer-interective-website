@@ -7,7 +7,7 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('https://evening-woodland-05842.herokuapp.com/allparts',{
+        fetch('http://localhost:4000/allparts',{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`

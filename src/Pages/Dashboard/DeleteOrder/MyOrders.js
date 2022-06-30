@@ -16,7 +16,7 @@ const MyOrders = () => {
 
      
     
-        const {data,isLoading,refetch}= useQuery([[], user.email], ()=> fetch(`https://evening-woodland-05842.herokuapp.com/order?email=${user.email}` ,{
+        const {data,isLoading,refetch}= useQuery([[], user.email], ()=> fetch(`http://localhost:4000/order?email=${user.email}` ,{
             method: 'GET',
              headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
