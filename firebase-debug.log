@@ -1,0 +1,39 @@
+[debug] [2022-06-30T15:06:36.708Z] ----------------------------------------------------------------------
+[debug] [2022-06-30T15:06:36.710Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\dbwctp64\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2022-06-30T15:06:36.711Z] CLI Version:   3.16.0
+[debug] [2022-06-30T15:06:36.711Z] Platform:      win32
+[debug] [2022-06-30T15:06:36.711Z] Node Version:  v16.15.1
+[debug] [2022-06-30T15:06:36.712Z] Time:          Thu Jun 30 2022 21:06:36 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-30T15:06:36.712Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-06-30T15:06:36.728Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2022-06-30T15:06:36.729Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  E:\projects\assignment-12
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2022-06-30T15:06:50.126Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Thu Jun 30 2022 21:06:50 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-06-30T15:07:11.530Z] Error: connect ETIMEDOUT 104.197.85.31:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 104.197.85.31:443
