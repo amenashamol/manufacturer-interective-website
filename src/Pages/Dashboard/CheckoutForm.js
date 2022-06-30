@@ -13,7 +13,7 @@ const CheckoutForm = ({ product }) => {
     const { _id, amount, orderName } = product;
 
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://evening-woodland-05842.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -72,7 +72,7 @@ const CheckoutForm = ({ product }) => {
         else {
             setCardError('');
             setTransactionId(paymentIntent.id);
-            console.log(paymentIntent);
+            
             setSuccess('Congrats! Your payment is completed.')
             
             //store payment on database
@@ -80,7 +80,7 @@ const CheckoutForm = ({ product }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:4000/booking/${_id}`, {
+            fetch(`https://evening-woodland-05842.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

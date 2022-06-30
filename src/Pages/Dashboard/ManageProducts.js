@@ -10,7 +10,7 @@ import AllProduct from './AllProduct';
 const ManageProduct = () => {
     const [deletingProducts, setDeletingProducts]=useState(null)
     
-    const { data:products, isLoading, refetch } = useQuery([] ,() => fetch('http://localhost:4000/allproduct',{
+    const { data:products, isLoading, refetch } = useQuery([] ,() => fetch('https://evening-woodland-05842.herokuapp.com/allproduct',{
         method: 'GET',
         headers: {
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`

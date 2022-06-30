@@ -5,7 +5,7 @@ const Manageorders = () => {
     const [allOrders,setAllOrders]=useState([])
 
     useEffect(()=>{
-    fetch('http://localhost:4000/allorders',{
+    fetch('https://evening-woodland-05842.herokuapp.com/allorders',{
         method: 'GET',
         headers: {
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`

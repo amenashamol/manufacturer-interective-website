@@ -11,22 +11,20 @@ import AdminRow from './AdminRow';
 const MakeAdmin = () => {
    
   
-const { data,isloading,refetch} = useQuery('user', ()=> 
-                fetch('http://localhost:4000/adminuser'
-                ,{
+const { data:users,isloading,refetch} = useQuery([], ()=> fetch('https://evening-woodland-05842.herokuapp.com/adminuser',{
                  method: 'GET',
                  headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
                 
             })
-                )
-            .then(res=>res.json())
+                
+            .then(res=>res.json()))
                 
 
-            
+           
 
-            const events = data ?? []
+            // const events = data ?? []
             
             
     
@@ -61,7 +59,7 @@ const { data,isloading,refetch} = useQuery('user', ()=>
                         
                                 
                                 {
-                            events?.map((user, index) => <AdminRow
+                            users?.map((user, index) => <AdminRow
                             key={user._id}
                             user={user} 
                             index={index}
