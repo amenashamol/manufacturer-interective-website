@@ -11,7 +11,7 @@ const useToken =user  =>{
         const currentUser = {email: email,displayName:displayName};
         
         if(email){
-            fetch(`http://localhost:4000/loginuser/${email}`, {
+            fetch(`https://evening-woodland-05842.herokuapp.com/loginuser/${email}`, {
                 method:'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -20,7 +20,7 @@ const useToken =user  =>{
             })
             .then(res=>res.json())
             .then(data => {
-                console.log('data inside useToken', data);
+                
                 const accessToken = data.token;
                 localStorage.setItem('accessToken', accessToken);
                 setToken(accessToken);

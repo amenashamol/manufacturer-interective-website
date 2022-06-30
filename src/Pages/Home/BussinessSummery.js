@@ -21,8 +21,8 @@ const BussinessSummery = () => {
                <div className='border-l-4 border-indigo-600 my-1'>
                <h1 className='my-5 font-semibold text-xl mx-8'>overall Statement</h1>
                 
-                  <div class="overflow-x-auto mx-8 ">
-  <table class="table w-full">
+                  <div className="overflow-x-auto mx-8 ">
+  <table className="table w-full">
    
      <thead>
        <tr>
@@ -38,7 +38,7 @@ const BussinessSummery = () => {
      </thead >
      <tbody>
      
-      <tr  class="active">
+      <tr  className="active">
          <th>100+ customers</th>
          <td>120M+</td>
          <td>33K+</td>

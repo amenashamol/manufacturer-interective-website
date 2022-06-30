@@ -24,9 +24,9 @@ const AllProduct = ({product,setDeletingProducts}) => {
                  <p>Price:${price}</p>
                 
             
-                    <div class="card-actions justify-end">
-                    <label onClick={() => setDeletingProducts(product)} for="delete-confirm-modal"className="btn btn-xs btn-error">Delete</label>
-                    {/* <button onClick={() => handleDelete(_id)} for="delete-confirm-modal"className="btn btn-xs btn-error">Delete</button> */}
+                    <div className="card-actions justify-end">
+                    <label onClick={() => setDeletingProducts(product)}htmlFor="delete-confirm-modal"className="btn btn-xs btn-error">Delete</label>
+                    {/* <button onClick={() => handleDelete(_id)}htmlFor="delete-confirm-modal"className="btn btn-xs btn-error">Delete</button> */}
                     </div>
                 </div>
             </div>

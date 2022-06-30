@@ -11,7 +11,7 @@ const  Addreview = () => {
   const onSubmit = (data) =>{
   
 
-   const url='http://localhost:4000/review'
+   const url='https://evening-woodland-05842.herokuapp.com/review'
    fetch(url,{
        method:'POST',
        headers:{
@@ -36,7 +36,7 @@ const  Addreview = () => {
    
       <input className="input input-bordered input-xs w-full max-w-xs my-2 " name="Rating" placeholder="Rating out of 5" type="number" max={5} min={1} {...register("Rating",{ required: true })} />
       
-      <textarea className="input input-bordered input-lg w-full max-w-xs my-2" name="Review" placeholder="Review" minlength="50" type="text"{...register("Review", { required: true })} />
+      <textarea className="input input-bordered input-lg w-full max-w-xs my-2" name="Review" placeholder="Review" minLength="50" type="text"{...register("Review", { required: true })} />
      
       <input className="input input-bordered input-xs w-full max-w-xs my-2 text-success"  type="submit"  value="SUBMIT"/>
     </form>

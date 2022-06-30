@@ -10,7 +10,7 @@ import Loading from '../Shared/Loading';
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:4000/booking/${id}`;
+    const url = `https://evening-woodland-05842.herokuapp.com/booking/${id}`;
 
     const { data: product, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
@@ -25,17 +25,17 @@ const Payment = () => {
 
     return (
         <div>
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
-                <div class="card-body">
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+                <div className="card-body">
                     <p className="text-success font-bold">Hello, {product.userName}</p>
-                    <h2 class="card-title">Please Pay for<span className="text-success font-bold" >{product.orderName}</span>  product</h2>
+                    <h2 className="card-title">Please PayhtmlFor<span className="text-success font-bold" >{product.orderName}</span>  product</h2>
                     <p>Booking Date: <span className='text-orange-700'>{product.formattedDate}</span></p>
                     <p> Quantity : {product.quantity}</p>
                     <p>Please pay: ${product.amount}</p>
                 </div>
             </div>
-            <div class="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-                <div class="card-body">
+            <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm product={product} />
                     </Elements>

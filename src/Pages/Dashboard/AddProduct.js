@@ -11,7 +11,7 @@ const  AddProduct = () => {
   const onSubmit = (data) =>{
   
 
-   const url='http://localhost:4000/product'
+   const url='https://evening-woodland-05842.herokuapp.com/product'
    fetch(url,{
        method:'POST',
        headers:{

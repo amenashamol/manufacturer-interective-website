@@ -50,7 +50,7 @@ const MyPortFolio = () => {
                 <div className="divider "></div>
                 <div className='border-l-4 border-orange-500/75'>
                     <h2 className="text-4xl font-bold  my-4 ">My <span className='text-green-500 '>Skils :</span> </h2>
-                    <ul class="list-disc mx-12">
+                    <ul className="list-disc mx-12">
                     <li>Html,CSS</li>
                     <li>Boostrap</li>
                     <li>Tailwind</li>

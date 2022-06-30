@@ -7,7 +7,7 @@ import './NotFound.css'
 const NotFound = () => {
     return (
         <div className="flex items-center justify-center w-screen h-screen">
-  <div class="px-4 lg:py-12">
+  <div className="px-4 lg:py-12">
     <div className="lg:gap-4 lg:flex">
       <div
         className= "flex flex-col items-center justify-center md:py-24 lg:py-32" >
@@ -20,7 +20,7 @@ const NotFound = () => {
           <span  className="text-red-500">Oops!</span> Page not found
         </p>
         <p  className="mb-8 text-center text-gray-500 md:text-lg">
-          The page you’re looking for doesn’t exist.
+          The page you’re lookinghtmlFor doesn’t exist.
         </p>
         <Link to="/"  className="px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100">
         

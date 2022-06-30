@@ -14,18 +14,9 @@ import LoginUser from '../UpdateUser/LoginUser';
      
     
      
-    //  useEffect(() => {
-    //     fetch("http://localhost:4000/loginuser")
-    //       .then((res) => res.json())
-    //       .then((data) => setUsers(data));
-    //   }, [isReload]);
-    
-    
-        
-    
-        useEffect(()=>{
+          useEffect(()=>{
                 if (authuser) {
-                    fetch(`http://localhost:4000/loginuser?email=${authuser.email}` ,{
+                    fetch(`https://evening-woodland-05842.herokuapp.com/loginuser?email=${authuser.email}` ,{
                         method:'GET',
                         headers:{
                             'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -50,7 +41,7 @@ import LoginUser from '../UpdateUser/LoginUser';
         <div>
        {users.map(user=> 
        <LoginUser
-                setIsReload={setIsReload} isReload={isReload}  user={user} authuser={authuser}
+                setIsReload={setIsReload} isReload={isReload}  user={user} authuser={authuser} key={user._id}
                 />
                 )}
         </div>

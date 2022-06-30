@@ -12,19 +12,19 @@ const MakeAdmin = () => {
    
   
 const { data,isloading,refetch} = useQuery('user', ()=> 
-                fetch('http://localhost:4000/adminuser'
-            //     ,{
-            //      method: 'GET',
-            //      headers: {
-            //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-            //     }
+                fetch('https://evening-woodland-05842.herokuapp.com/adminuser'
+                ,{
+                 method: 'GET',
+                 headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
                 
-            // })
+            })
                 )
             .then(res=>res.json())
                 
 
-            )
+            
 
             const events = data ?? []
             
@@ -39,8 +39,8 @@ const { data,isloading,refetch} = useQuery('user', ()=>
                
            <div>
             
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

@@ -20,7 +20,7 @@ const MyOrder = ({setDeletingOrder,index,a}) => {
                                     </div>}
                                 </td>
                                 {/* <td>{!a.paid && <button className="btn btn-xs" onClick={()=>handleDelete(a._id)}>Delete</button>}</td>  */}
-                                <td>{!a.paid && <label onClick={() => setDeletingOrder(a)} for="delete-confirm-modal"className="btn btn-xs btn-error">Delete</label>}</td> 
+                                <td>{!a.paid && <label onClick={() => setDeletingOrder(a)}htmlFor="delete-confirm-modal"className="btn btn-xs btn-error">Delete</label>}</td> 
                             </tr>
        
     );

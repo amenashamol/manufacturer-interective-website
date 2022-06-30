@@ -22,8 +22,8 @@ const PartsCard = ({part}) => {
                  <p>Price:${price}</p>
                  {/* <div className='my-5'> */}
                  <Link to={`/purchase/${_id}`}>
-                 <div class="card-actions justify-end">
-                 <button class="btn btn-primary">Buy Now</button>
+                 <div className="card-actions justify-end">
+                 <button className="btn btn-primary">Buy Now</button>
     </div>
                  </Link>
                  {/* </div> */}

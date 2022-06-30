@@ -10,22 +10,28 @@ import AllProduct from './AllProduct';
 const ManageProduct = () => {
     const [deletingProducts, setDeletingProducts]=useState(null)
     
-    const { data: products, isLoading, refetch } = useQuery([], () => fetch('http://localhost:4000/allproduct'
-    // 
-    )
-     .then(res => res.text()));
-
+    const { data:products, isLoading, refetch } = useQuery([] ,() => fetch('https://evening-woodland-05842.herokuapp.com/allproduct',{
+        method: 'GET',
+        headers: {
+           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+       }
+     })
+     .then(res => res.json()));
+     
+     //const products = data ?? []
      
     if (isLoading) {
         return <Loading></Loading>
     }
+     
     return (
         <div className='my-5'>
           
            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                {
-                  products.map(product=> <AllProduct
-                    key={product._id}
+                  products.map(product=>
+                     <AllProduct
+                    
                     product={product}
                     refetch={refetch}
                     setDeletingProducts={setDeletingProducts}
@@ -35,7 +41,7 @@ const ManageProduct = () => {
                    
                    
                     
-                   ) 
+                  )    
                }
               
            </div>

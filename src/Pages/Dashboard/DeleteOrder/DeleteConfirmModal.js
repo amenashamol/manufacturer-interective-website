@@ -6,7 +6,7 @@ const DeleteConModal = ({ refetch,deletingOrder,setDeletingOrder}) => {
     const {_id, orderName} = deletingOrder;
            
     const handleDelete = (id) => {
-        fetch(`http://localhost:4000/order/${id}`, {
+        fetch(`https://evening-woodland-05842.herokuapp.com/order/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const DeleteConModal = ({ refetch,deletingOrder,setDeletingOrder}) => {
                     
                     <div className="modal-action">
                     <button onClick={() => handleDelete(_id)}className="btn btn-xs btn-error">Delete</button>
-                        <label for="delete-confirm-modal"className="btn btn-xs">Cancel</label>
+                        <label htmlFor="delete-confirm-modal"className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
             </div>
