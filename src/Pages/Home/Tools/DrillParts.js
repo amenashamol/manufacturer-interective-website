@@ -6,12 +6,13 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('https://ancient-taiga-17717.herokuapp.com/allparts',{
-            method:'GET',
-            headers:{
-                'authorization':`Bearer ${localStorage.getItem('accessToken')}`
-            }
-         })
+        fetch('http://localhost:4000/allparts')
+        // ,{
+        //     method:'GET',
+        //     headers:{
+        //         'authorization':`Bearer ${localStorage.getItem('accessToken')}`
+        //     }
+        //  })
         .then(res=>res.json())
         .then(data=>setParts(data)) 
      }, [])

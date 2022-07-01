@@ -13,7 +13,7 @@ import LoginUser from '../UpdateUser/LoginUser';
      
           useEffect(()=>{
                 if (authuser) {
-                    fetch(`https://ancient-taiga-17717.herokuapp.com/loginuser?email=${authuser.email}` ,{
+                    fetch(`http://localhost:4000/loginuser?email=${authuser.email}` ,{
                         method:'GET',
                         headers:{
                             'authorization':`Bearer ${localStorage.getItem('accessToken')}`

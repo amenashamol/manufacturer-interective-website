@@ -11,7 +11,7 @@ const  Addreview = () => {
   const onSubmit = (data) =>{
   
 
-   const url='https://ancient-taiga-17717.herokuapp.com/review'
+   const url='http://localhost:4000/review'
    fetch(url,{
        method:'POST',
        headers:{
