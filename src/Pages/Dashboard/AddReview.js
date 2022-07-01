@@ -1,23 +1,31 @@
-import React from "react";
+import React,{useState} from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
+import auth from "../../firebase.init";
+
+import { format } from 'date-fns';
 
 const  Addreview = () => {
+  
+  const [date, setDate] = useState(new Date());
+  const formattedDate = format(date, 'PPP');
+  const [user]=useAuthState(auth)
   const {
     register,
     handleSubmit,
     } = useForm();
 
   const onSubmit = (data) =>{
-  
-
+      const use=user.email
+     const inf={data, use,formattedDate}
    const url='https://ancient-taiga-17717.herokuapp.com/review'
    fetch(url,{
        method:'POST',
        headers:{
            'content-type':'application/json'
        },
-       body:JSON.stringify(data)
+       body:JSON.stringify(inf)
 
    })
    .then(res=>res.json())

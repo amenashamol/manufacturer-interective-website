@@ -2,7 +2,7 @@ import React , {useEffect,useState}from 'react';
 
 import Review from './Review';
 const Reviews = () => {
-    const [date, setDate] = useState(new Date());
+    
     
     const [reviews,setReviews]=useState([])
 
@@ -22,7 +22,7 @@ const Reviews = () => {
                     reviews.map(review =><Review
                         key={review._id}
                         review={review}
-                        date={date}
+                       
                     ></Review>)
                 }
             </div>

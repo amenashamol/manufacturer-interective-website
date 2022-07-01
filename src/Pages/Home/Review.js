@@ -1,11 +1,11 @@
 import React from 'react';
-import { format } from 'date-fns';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
-const Review = ({ review, date }) => {
-    const formattedDate = format(date, 'PPP');
-    const {Rating ,Review}=review
+const Review = ({ review }) => {
+   
+    const {Rating ,Review,formattedDate}=review
     const[user]=useAuthState(auth)
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
