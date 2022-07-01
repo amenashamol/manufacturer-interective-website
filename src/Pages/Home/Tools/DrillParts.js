@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import Purchase from '../../Purchase/Purchase';
 import PartsCard from './PartsCard';
 
 
@@ -7,7 +6,7 @@ const DrillParts = () => {
     const [parts, setParts]=useState([])
     
     useEffect(() => {
-        fetch('https://evening-woodland-05842.herokuapp.com/allparts',{
+        fetch('https://ancient-taiga-17717.herokuapp.com/allparts',{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`

@@ -1,24 +1,22 @@
 import React ,{useState,useEffect}from 'react';
-
-import { useForm } from "react-hook-form";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 
- const UpdateUser = ( { setIsReload, isReload,id}) => {
+ const UpdateUser = ( {id}) => {
       const[updateData,setUpdateData]=useState('')
       const [user]=useAuthState(auth)
      
    
     
     
-    const {
-        register,
-        handleSubmit,
-        } = useForm();
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     } = useForm();
 
        useEffect(()=>{
-         fetch(`https://evening-woodland-05842.herokuapp.com/updateuser/${id}`,{
+         fetch(`https://ancient-taiga-17717.herokuapp.com/updateuser/${id}`,{
             method:'GET',
             headers:{
                 'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +25,7 @@ import auth from '../../firebase.init';
          .then(result=>result.json())
         .then(data=>setUpdateData(data))
          
-       },[])
+       },[id])
     
 
          const HandleUpdate = event =>{
@@ -41,9 +39,9 @@ import auth from '../../firebase.init';
             const phone=event.target.phone.value 
             const LinkedIn=event.target.linkedIn.value
             
-            const updateUser={name,education,address,phone,email, LinkedIn}
+            const updateUser={name,email,education,address,phone, LinkedIn}
             
-            const url=`https://evening-woodland-05842.herokuapp.com/updateuser/${id}`
+            const url=`https://ancient-taiga-17717.herokuapp.com/updateuser/${id}`
                 fetch(url,{
                     method:'PUT',
                     headers:{

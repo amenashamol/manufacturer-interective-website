@@ -11,7 +11,7 @@ const  AddProduct = () => {
   const onSubmit = (data) =>{
   
 
-   const url='https://evening-woodland-05842.herokuapp.com/product'
+   const url='https://ancient-taiga-17717.herokuapp.com/product'
    fetch(url,{
        method:'POST',
        headers:{

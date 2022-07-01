@@ -1,9 +1,6 @@
 import React ,{useState,useEffect}from 'react';
-import { useForm } from "react-hook-form";
-
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { Link } from 'react-router-dom';
 import LoginUser from '../UpdateUser/LoginUser';
 
 
@@ -16,7 +13,7 @@ import LoginUser from '../UpdateUser/LoginUser';
      
           useEffect(()=>{
                 if (authuser) {
-                    fetch(`https://evening-woodland-05842.herokuapp.com/loginuser?email=${authuser.email}` ,{
+                    fetch(`https://ancient-taiga-17717.herokuapp.com/loginuser?email=${authuser.email}` ,{
                         method:'GET',
                         headers:{
                             'authorization':`Bearer ${localStorage.getItem('accessToken')}`
@@ -27,7 +24,7 @@ import LoginUser from '../UpdateUser/LoginUser';
                 .then(data=>setUsers(data))
                  }
                 
-                 },[])
+                 },[authuser])
 
         
     return (

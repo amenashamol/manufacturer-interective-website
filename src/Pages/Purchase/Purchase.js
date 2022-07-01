@@ -1,6 +1,6 @@
-import React, {useEffect,useState} from 'react';
+import React, {useState} from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import './Purchase.css'
@@ -17,7 +17,7 @@ const Purchase = () => {
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
     
-    const {data,isLoading,refetch}= useQuery(['use', id], ()=>fetch(`https://evening-woodland-05842.herokuapp.com/part?id=${id}`,{
+    const {data,isLoading}= useQuery(['use', id], ()=>fetch(`https://ancient-taiga-17717.herokuapp.com/part?id=${id}`,{
         method:'Get',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const Purchase = () => {
     }
    
             
- const url='https://evening-woodland-05842.herokuapp.com/orders'
+ const url='https://ancient-taiga-17717.herokuapp.com/orders'
  fetch(url,{
      method:'POST',
      headers:{

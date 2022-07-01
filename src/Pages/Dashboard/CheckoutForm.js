@@ -13,7 +13,7 @@ const CheckoutForm = ({ product }) => {
     const { _id, amount, orderName } = product;
 
     useEffect(() => {
-        fetch('https://evening-woodland-05842.herokuapp.com/create-payment-intent', {
+        fetch('https://ancient-taiga-17717.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -43,7 +43,7 @@ const CheckoutForm = ({ product }) => {
             return;
         }
 
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
+        const { error } = await stripe.createPaymentMethod({
             type: 'card',
             card
         });
@@ -80,7 +80,7 @@ const CheckoutForm = ({ product }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://evening-woodland-05842.herokuapp.com/booking/${_id}`, {
+            fetch(`https://ancient-taiga-17717.herokuapp.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

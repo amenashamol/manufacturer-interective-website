@@ -1,8 +1,8 @@
-import React,{ useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React  from 'react';
+
 import { useQuery } from 'react-query';
 
-import auth from '../../firebase.init';
+
 import Loading from '../Shared/Loading';
 import AdminRow from './AdminRow';
 
@@ -11,7 +11,7 @@ import AdminRow from './AdminRow';
 const MakeAdmin = () => {
    
   
-const { data:users,isloading,refetch} = useQuery([], ()=> fetch('https://evening-woodland-05842.herokuapp.com/adminuser',{
+const { data:users,isloading,refetch} = useQuery([], ()=> fetch('https://ancient-taiga-17717.herokuapp.com/adminuser',{
                  method: 'GET',
                  headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

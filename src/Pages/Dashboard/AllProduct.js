@@ -1,8 +1,8 @@
 import React from 'react';
-import { toast} from 'react-toastify';
+
 
 const AllProduct = ({product,setDeletingProducts}) => {
-    const{_id, img, name, description,minimum_order_quantity ,maximum_order_quantity,available_quantity,price}=product
+    const{ img, name, description,minimum_order_quantity ,maximum_order_quantity,available_quantity,price}=product
     
    
     return (
