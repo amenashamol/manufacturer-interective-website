@@ -17,8 +17,8 @@ const  Addreview = () => {
     } = useForm();
 
   const onSubmit = (data) =>{
-      const use=user.email
-     const inf={data, use,formattedDate}
+      const name=user.displayName
+     const inf={data, name,formattedDate}
    const url='https://ancient-taiga-17717.herokuapp.com/review'
    fetch(url,{
        method:'POST',

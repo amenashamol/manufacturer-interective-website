@@ -5,8 +5,8 @@ import auth from '../../firebase.init';
 
 const Review = ({ review }) => {
    
-    const {Rating ,Review,formattedDate}=review
-    const[user]=useAuthState(auth)
+    const {Rating ,Review,formattedDate,name}=review
+   
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
   
@@ -18,7 +18,7 @@ const Review = ({ review }) => {
     <p>{Review}</p>
     <div className="card-actions justify-end">
       <div className="badge badge-outline">{formattedDate}</div> 
-      <div className="badge badge-outline">{user?.displayName}</div>
+      <div className="badge badge-outline">{name}</div>
     </div>
   </div>
 </div>
