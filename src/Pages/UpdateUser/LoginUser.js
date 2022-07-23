@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { useForm } from 'react-hook-form';
 import UpdateUser from './UpdateUser';
 
 const LoginUser = ({user,setIsReload, isReload,authuser}) => {
-    //    console.log(user)
+    
     const {
         register,
         handleSubmit,
@@ -15,11 +16,11 @@ const LoginUser = ({user,setIsReload, isReload,authuser}) => {
         <div className="hero-content flex-col lg:flex-row ">
              <div className="card  shadow-xl h-50">
                    <div className="card-body">
-                       <h2 className="card-title uppercase">{user?.displayName}          Profile!</h2>
+                       <h2 className="card-title uppercase">{authuser?.displayName}          Profile!</h2>
 
                         
                         
-                            <p>Name: {user.displayName} </p>
+                            <p>Name: {authuser?.displayName} </p>
                             <p>Email: {user.email} </p>
                             <p>Education: {user.education}</p>
                             <p>Location: {user.address} </p>
