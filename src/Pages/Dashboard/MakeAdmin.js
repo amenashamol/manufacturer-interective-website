@@ -11,7 +11,7 @@ import AdminRow from './AdminRow';
 const MakeAdmin = () => {
    
   
-const { data:users,isloading,refetch} = useQuery([], ()=> fetch('http://localhost:4000/adminuser',{
+const { data:users,isloading,refetch} = useQuery([], ()=> fetch('https://ancient-taiga-17717.herokuapp.com/adminuser',{
                  method: 'GET',
                  headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -17,7 +17,7 @@ const Purchase = () => {
     const [user] =useAuthState(auth)
     const formattedDate = format(date, 'PPP');
     
-    const {data,isLoading}= useQuery(['use', id], ()=>fetch(`http://localhost:4000/part?id=${id}`,{
+    const {data,isLoading}= useQuery(['use', id], ()=>fetch(`https://ancient-taiga-17717.herokuapp.com/part?id=${id}`,{
         method:'Get',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const Purchase = () => {
     }
    
             
- const url='http://localhost:4000/orders'
+ const url='https://ancient-taiga-17717.herokuapp.com/orders'
  fetch(url,{
      method:'POST',
      headers:{

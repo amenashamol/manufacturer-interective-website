@@ -6,7 +6,7 @@ const useAdmin = user => {
     useEffect( () =>{
         const email = user?.email;
         if(email){
-            fetch(`http://localhost:4000/admin/${email}`, {
+            fetch(`https://ancient-taiga-17717.herokuapp.com/admin/${email}`, {
                 method:'GET',
                 headers: {
                     'authorization':`Bearer ${localStorage.getItem('accessToken')}`
